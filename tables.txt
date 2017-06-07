@@ -1,0 +1,56 @@
+
+PATIENT
+
+create table patient( pid number(20) primary key, pname varchar2(20), page number(3),pgender varchar2(6), pcontact number(10), paddress varchar2(20) );
+
+insert into patient values(101,’simran’,22,’female’,8796610908,’hyderabad’);
+insert into patient values(102,’shefali’,23,’female’,9708131234,’uppal’);
+
+insert into patient values(103,’shashank’,23,’male’,8742632921,’secunderabad’);
+
+DOCTOR
+
+create table Doctor(ID number(10) primary key,DName varchar2(20),specialization varchar2(20),phone number(10));
+
+
+insert into Doctor values(1,’DR.Gaikwad’,’orthodontic’,7864747589);
+
+insert into Doctor values(2,’DR.Reddy’,’cardiologist’,8796747589);
+
+insert into Doctor values(3,’DR.Kulkarni’,’gynecologist’,8796741234);
+
+
+APPOINTMENT 
+
+create table Appointment(Date_of_App date,slot varchar2(15),  couponNo number(10) primary key,pid references patient(pid),ID references Doctor(ID));
+
+insert into Appointment values(’24-JAN-2016’,1,1,101, 1);
+
+insert into Appointment values(’26-JAN-2016’,2,2,102, 2);
+
+
+
+RECEPTIONIST
+
+create table receptionist(LoginID varchar2(20),password varchar2(20));
+
+insert into receptionist values(’r123’,’abc’);
+
+insert into receptionist values(’r456’,’def’);
+
+
+DOCTORLOGIN
+
+create table DoctorLogin(LoginID varchar2(20),password varchar2(20));
+
+
+insert into DoctorLogin values('d123','qwerty');
+
+insert into DoctorLogin values('d124','abc1');
+
+
+
+
+
+
+
